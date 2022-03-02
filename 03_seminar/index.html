@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Билюкин С.К. ПИ19-1</title>
+</head>
+<body>
+<div class="container-sm" style="max-width: 600px">
+    <form action="http://localhost:8080/scoring" method="post">
+        <h1>Форма для заполнения</h1>
+        <fieldset>
+            <legend>Контактная информация</legend>
+
+            <label class="form-label" for="name">Имя фамилия <em>*</em></label>
+            <input class="form-control mb-2" type="text" id="name" name="name" required>
+
+            <label class="form-label" for="phone">Телефон</label>
+            <input class="form-control mb-2" type="text" id="phone" name="phone">
+
+            <label class="form-label" for="email">Электронная почта <em>*</em></label>
+            <input class="form-control mb-2" type="email" id="email" name="email" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Данные для проверки</legend>
+
+            <label class="form-label" for="sex">Пол <em>*</em></label>
+            <select class="form-control mb-2" name="sex" id="sex">
+                <option value="male">Мужской</option>
+                <option value="female">Женский</option>
+            </select>
+
+            <label class="form-label" for="birthday">Дата рождения <em>*</em></label>
+            <input class="form-control mb-2" type="date" id="birthday" name="birthday" required>
+
+            <label class="form-label" for="periodLife">Срок проживания в регионе <em>*</em></label>
+            <input class="form-control mb-2" type="number" id="periodLife" name="periodLife" min="0" max="100" required>
+
+            <label class="form-label" for="profession">Профессия <em>*</em></label>
+            <select class="form-select mb-2" name="profession" id="profession">
+                <option value="driver">Водитель</option>
+                <option value="police">Полицейский</option>
+                <option value="pilot">Пилот</option>
+                <option value="judge">Судья</option>
+                <option value="developer">Разработчик</option>
+                <option value="teacher">Учитель</option>
+                <option value="other">Другое</option>
+            </select>
+
+            <label class="form-label" for="sphere">Сфера деятельности <em>*</em></label>
+            <select class="form-select mb-2" name="sphere" id="sphere">
+                <option value="public">Общественная</option>
+                <option value="other">Другая</option>
+            </select>
+
+            <label class="form-label" for="periodWork">Период работы в организации <em>*</em></label>
+            <input class="form-control mb-2" type="number" id="periodWork" name="periodWork" min="0" max="50" required>
+
+            <input class="form-check-input mb-2" type="checkbox" id="bankAccount" name="bankAccount">
+            <label class="form-check-label" for="bankAccount">Наличие банковского счета</label>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Отправить</button>
+        <button type="button" onclick="setDefaultValues()" class="btn btn-secondary">Значения по умолчанию</button>
+    </form>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    const setDefaultValues = () => {
+        document.querySelector('input[name="name"]').value = 'Билюктн Сергей';
+        document.querySelector('input[name="phone"]').value = '89934567890';
+        document.querySelector('input[name="email"]').value = 'email@email.com';
+        document.querySelector('input[name="birthday"]').value = '2000-06-09';
+        document.querySelector('input[name="periodLife"]').value = 3;
+        document.querySelector('input[name="periodWork"]').value = 2;
+    }
+</script>
+</body>
+</html>
