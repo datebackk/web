@@ -33,6 +33,14 @@ app.post('/scoring', function(request, response) {
             break;
     }
 
+    switch (data.sphere) {
+        case 'public':
+            scoring += 0.21;
+            break;
+    }
+
+    scoring += Math.min(0.59, data.periodWork * 0.059);
+
     if (data.bankAccount) scoring += 0.45;
     if (data.realty) scoring += 0.35;
     if (data.insurance) scoring += 0.19;
