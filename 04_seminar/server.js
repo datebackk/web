@@ -20,9 +20,9 @@ app.post('/scoring', function(request, response) {
     }
 
     const age = (Date.now() - new Date(data.birthday)).year;
-    if (age > 20) scoring += Math.max(0.3, (age - 20) * 0.01);
+    if (age > 20) scoring += Math.min(0.3, (age - 20) * 0.01);
 
-    scoring += Math.max(0.42, data.periodLife * 0.042);
+    scoring += Math.min(0.42, data.periodLife * 0.042);
 
     switch (data.profession) {
         case 'low-risk':
